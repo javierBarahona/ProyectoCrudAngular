@@ -1,0 +1,14 @@
+<slider-component 
+    [nombre]="'Busqueda: ' + search" 
+    [size]="'small'">
+</slider-component>
+
+<div class="center">
+    <section id="content">
+        
+        <h2 class="subheader">Articulos encontrados</h2>     
+        <articles-component [articles]="articles"></articles-component> 
+
+    </section>
+    <sidebar-component></sidebar-component>
+</div>

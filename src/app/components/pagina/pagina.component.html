@@ -1,0 +1,52 @@
+<slider-component [nombre]="'Formulario'"></slider-component>
+
+<div class="center">
+    <section id="content">
+        <div id="favorita" *ngIf="favorita">
+            <h2 class="subheader">Pelicula favorita</h2>
+            <h4>{{favorita.title | uppercase }}</h4>
+            <h4>{{favorita.year | espar }}</h4>
+        </div>
+        <h1 class="subheader">Pagina</h1>
+        <!--
+        <div *ngIf="nombre" ; then siHayParametros else noHayParametros></div>
+
+        <ng-template #siHayParametros>
+            <h2>el nombre es {{nombre}}</h2>
+        </ng-template>
+
+        <ng-template #noHayParametros>
+            <h2>no hay parametros</h2>
+        </ng-template>
+
+        <button (click)="redireccion()">llevame al formulario</button>
+        <hr />
+
+        <h2>mostrar pelicula</h2>
+        {{peliculas[0].title}}
+
+        <hr />
+        <h2>Numero de peliculas</h2>
+
+        <div *ngIf="peliculas.length <= 3">
+            <p>hay pocas peliculas</p>
+        </div>
+        <di *ngIf="peliculas.length > 3">
+            <p>hay muchas peliculas</p>
+        </di>
+
+        {{peliculas.length}}
+
+        <hr />
+        -->
+        <h2 class="subheader">listado de peliculas</h2>
+        <div id="articles" *ngIf="peliculas">
+            <div *ngFor="let pelicula of peliculas; let i = index;">
+                <pelicula-component [pelicula]="pelicula" (MarcaFavorita)="mostrarFavorita($event)"> 
+                </pelicula-component>
+            </div>
+        </div>
+
+    </section>
+    <sidebar-component></sidebar-component>
+</div>

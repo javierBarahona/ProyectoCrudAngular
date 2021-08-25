@@ -1,0 +1,21 @@
+<article class="article-item">
+    <div class="img-wrap">
+        <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
+    </div>
+
+    <h2>{{pelicula.title}}</h2>
+    <span class="year" [ngClass]="{
+                'year-green': pelicula.year > 2016, 
+                'year-red': pelicula.year < 2016}">
+        {{pelicula.year}}
+    </span>
+    <span class="date">
+        hace 5 minutos
+    </span>
+    <a href="#">leer mas</a>
+
+    <button (click)="seleccionar($event, pelicula)">
+        seleccionar como favorita
+    </button>
+    <div class="clearfix"></div>
+</article>
